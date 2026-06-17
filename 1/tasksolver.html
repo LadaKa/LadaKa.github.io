@@ -8,10 +8,6 @@
     <title>Task Solver</title>
 
     <style>
-        /* =========================
-   BASE
-   ========================= */
-
         html,
         body {
             margin: 0;
@@ -22,10 +18,7 @@
             display: flex;
         }
 
-        /* =========================
-   SIDEBAR
-   ========================= */
-
+        /* SIDEBAR */
         .sidebar {
             width: 12%;
             min-width: 160px;
@@ -52,10 +45,7 @@
             background-color: #a4acb0;
         }
 
-        /* =========================
-   MAIN CONTENT
-   ========================= */
-
+        /* MAIN */
         .content {
             flex: 1;
             background: #c8d7de;
@@ -64,14 +54,11 @@
             box-sizing: border-box;
         }
 
-        /* =========================
-   CONTENT CARD
-   ========================= */
-
+        /* CARD */
         .contentCard {
             background: white;
             border-radius: 10px;
-            padding: 30px;
+            padding: 25px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
         }
 
@@ -86,25 +73,32 @@
             line-height: 1.6;
         }
 
-        .contentCard img {
-            display: block;
-            margin: 30px auto;
-            width: 80%;
-            max-width: 700px;
-            height: auto;
-        }
-
-        .figureCaption {
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            margin-top: -10px;
-        }
-
         /* =========================
-   NEXT BUTTON
-   ========================= */
+           SLIDES SECTION (NEW)
+           ========================= */
+        .slide {
+            background: white;
+            margin-top: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+            padding: 10px;
+        }
 
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .slideCaption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* ARROWS */
         .arrowNav {
             display: flex;
             justify-content: space-between;
@@ -125,15 +119,7 @@
             transform: scale(1.15);
         }
 
-        .arrowDisabled {
-            font-size: 3rem;
-            color: #aaa;
-        }
-
-        /* =========================
-   STEPPER
-   ========================= */
-
+        /* STEPPER */
         .stepper {
             display: flex;
             justify-content: center;
@@ -152,20 +138,14 @@
             font-weight: bold;
         }
 
-        /* =========================
-   FOOTER
-   ========================= */
-
+        /* FOOTER */
         .footer {
             text-align: center;
             margin-top: 30px;
             color: #444;
         }
 
-        /* =========================
-   MOBILE
-   ========================= */
-
+        /* MOBILE */
         @media (max-width: 768px) {
 
             body {
@@ -173,9 +153,7 @@
             }
 
             .sidebar {
-                width: auto;
-                max-width: none;
-                min-width: 0;
+                width: 100%;
                 flex-direction: row;
                 justify-content: center;
                 gap: 8px;
@@ -183,18 +161,13 @@
             }
 
             .sidebar a {
-                flex: 1;
-                margin: 0;
                 font-size: 14px;
                 padding: 8px;
+                margin: 0;
             }
 
             .content {
                 padding: 15px;
-            }
-
-            .contentCard {
-                padding: 20px;
             }
 
             .contentCard h1 {
@@ -204,45 +177,21 @@
             .contentCard p {
                 font-size: 1rem;
             }
-
-            .contentCard img {
-                width: 95%;
-            }
-
-            .pageNavigation {
-                text-align: center;
-            }
-
-            .nextPage {
-                width: 100%;
-                box-sizing: border-box;
-                text-align: center;
-            }
-
-            .stepper {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- MENU -->
-
+    <!-- SIDEBAR -->
     <div class="sidebar">
-
         <a href="../index.html">Home</a>
         <a href="../presentation.html">Presentation</a>
         <a href="../papers.html">Papers</a>
         <a href="../contact.html">Contact</a>
-
     </div>
 
     <!-- CONTENT -->
-
     <div class="content">
 
         <div class="contentCard">
@@ -250,60 +199,73 @@
             <h1>Task Solver</h1>
 
             <p>
-                Shoebox Tasks are visually structured educational activities
-                designed for individuals with Autism Spectrum Disorder (ASD).
-                Their clear organization supports learning, communication,
-                and the development of cognitive skills.
-            </p>
+                Our system implements a perception–analysis–action loop using a Vision–Language Model (VLM) in Python. 
+                Starting from an image of a Shoebox-Task setup and a general PDDL domain, it interprets the visual scene
+                 and generates a corresponding PDDL problem instance and action plan. 
+                 
+                 </p>
 
             <p>
-                In this project, Shoebox Tasks serve as a testbed for autonomous
-                task solving. Their visual structure enables machine learning
-                methods to detect task components, interpret task goals,
-                and generate action sequences leading to successful task completion.
+                After each action execution, a new image is analyzed to detect changes, update the plan, and revise the PDDL 
+                state accordingly. This iterative loop continues until the task is completed or an invalid state is detected. 
+                The robot can either solve the task autonomously or support a student by guiding task execution through
+                 demonstrations, gestures, voice instructions, and real-time error monitoring.
+            
             </p>
 
-            <img src="./shoeboxtask.jpg" alt="Shoebox Task">
-
-            <div class="figureCaption">
-                Example of a visually structured Shoebox Task.
+            <!-- SLIDES -->
+            <div class="slide">
+                <img src="./slides/slide-13.png">
             </div>
+
+            <div class="slide">
+                <img src="./slides/slide-11.png">
+            </div>
+
+            <div class="slide">
+                <img src="./slides/slide-12.png">
+            </div>
+
+            <div class="slide">
+                <img src="./slides/slide-14.png">
+            </div>
+
+            <div class="slide">
+                <img src="./slides/slide-15.png">
+            </div>
+
+            <div class="slide">
+                <img src="./slides/slide-16.png">
+            </div>
+
+            <div class="slide">
+                <img src="./slides/slide-17.png">
+            </div>
+
 
         </div>
 
-        <!-- NEXT PAGE -->
+        <!-- NAVIGATION (KEEP YOUR 3-PAGE SYSTEM) -->
         <div class="arrowNav">
 
-            <a href="shoeboxtask.html" class="arrowLink">
-                ←
-            </a>
+            <a href="shoeboxtask.html" class="arrowLink">←</a>
 
-            <a href="roboticinterface.html" class="arrowLink">
-                →
-            </a>
+            <a href="roboticinterface.html" class="arrowLink">→</a>
 
         </div>
 
         <!-- STEPPER -->
-
         <div class="stepper">
 
-            <a href="shoeboxtask.html" class="step">
-                ○ Shoebox Tasks
-            </a>
+            <a href="shoeboxtask.html" class="step">○ Shoebox Tasks</a>
 
-            <a href="tasksolver.html" class="step active">
-                ● Task Solver
-            </a>
+            <a href="tasksolver.html" class="step active">● Task Solver</a>
 
-            <a href="roboticinterface.html" class="step">
-                ○ Robotic Interface
-            </a>
+            <a href="roboticinterface.html" class="step">○ Robotic Interface</a>
 
         </div>
 
         <!-- FOOTER -->
-
         <div class="footer">
             Last updated:
             <script>
