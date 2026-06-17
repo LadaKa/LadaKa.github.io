@@ -114,7 +114,7 @@
             right: 0;
             bottom: 0;
 
-            background:rgba(28, 27, 27, 0.681);
+            background: rgba(28, 27, 27, 0.681);
             color: rgba(247, 242, 242, 0.681);
             font-size: 0.9rem;
             padding: 10px;
@@ -196,6 +196,43 @@
             text-decoration: none;
             color: inherit;
         }
+
+        @media (max-width: 768px) {
+
+            /* stack sidebar on top or hide it (optional) */
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-around;
+                min-width: unset;
+                max-width: unset;
+            }
+
+            /* IMPORTANT: fix grid */
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            /* fix typography scaling issues */
+            .card p {
+                font-size: 14px;
+                min-height: auto;
+            }
+
+            .learnButton {
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 24px !important;
+            }
+        }
     </style>
 </head>
 
@@ -212,18 +249,21 @@
 
         <!-- TOP -->
         <div class="topSection grid">
-            <div style="position:sticky; top:0; z-index:9999; background:#444; color:#fff; padding:10px; text-align:center; font-family:Arial, sans-serif;">
-  🚧 Under reconstruction — updates in progress
-</div>
+            <div
+                style="position:sticky; top:0; z-index:9999; background:#444; color:#fff; padding:10px; text-align:center; font-family:Arial, sans-serif;">
+                🚧 Under reconstruction — updates in progress
+            </div>
             <div class="topText">
                 <h1 style="font-size:3vw; text-align:center;">
                     Robot-Assisted Shoebox Tasks
                 </h1>
 
                 <p style="font-size:1.3vw;">
-                    Teaching with robots and teaching robots through tasks designed for the education of individuals with Autism Spectrum Disorder (ASD).<br>
+                    Teaching with robots and teaching robots through tasks designed for the education of individuals
+                    with Autism Spectrum Disorder (ASD).<br>
 
-                    This PhD research project explores automated task solving using vision-based machine learning, enabling robots to perceive, interpret, 
+                    This PhD research project explores automated task solving using vision-based machine learning,
+                    enabling robots to perceive, interpret,
                     and execute structured tasks autonomously, as well as through a visual programming interface.
                     <br><br>
 
