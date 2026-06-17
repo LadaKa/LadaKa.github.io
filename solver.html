@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vision-Based Solver</title>
+
+<style>
+
+html,
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+.sidebar {
+    width: 12%;
+    min-width: 160px;
+    max-width: 220px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 6px 0;
+    padding: 10px;
+    background-color: #555;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #a4acb0;
+}
+
+.content {
+    flex: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
+    padding: 3%;
+}
+
+/* TOP */
+
+.topSection {
+    background: #f2f6f7;
+}
+
+.topText {
+    grid-column: 1 / 3;
+}
+
+.topImage {
+    grid-column: 3;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topImage img {
+    width: 90%;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* BOTTOM */
+
+.bottomSection {
+    background: #c8d7de;
+}
+
+.card {
+    background: white;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card img {
+    width: 80%;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto;
+}
+
+.card:hover {
+    background-color: #a4acb0;
+    transform: translateY(-3px);
+}
+
+.card p {
+    font-size: 1vw;
+    min-height: 8vh;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: #f2f2f2;
+    color: #444;
+}
+
+.stepper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 18px 3%;
+    background: #f2f6f7;
+    flex-wrap: wrap;
+}
+
+.step {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.step:hover {
+    background: #eaf3f8;
+    transform: translateY(-2px);
+}
+
+/* inactive circle */
+.dot {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* active step */
+.step.active .dot {
+    color: #1f6feb;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="presentation.html">Presentation</a>
+    <a href="papers.html">Papers</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<div class="content">
+
+    <!-- TOP -->
+
+    <div class="topSection grid">
+
+        <div class="topText">
+
+            <h1 style="font-size:3vw; text-align:center;">
+                Vision-Based Solver
+            </h1>
+
+            <p style="font-size:1.3vw;">
+
+                The Vision-Based Solver enables automatic analysis and execution
+                of visually structured Shoebox Tasks. Using computer vision and
+                machine learning, the system detects task components,
+                interprets task goals, and generates action sequences for
+                autonomous task completion.
+
+            </p>
+
+        </div>
+
+        <div class="topImage">
+            <img src="./diag.png" alt="Vision-Based Solver">
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+
+    <div class="bottomSection grid">
+
+        <a href="./1/shoeboxtask.html" class="card">
+
+            <h2>Shoebox Tasks</h2>
+
+            <img src="./task.png">
+
+            <p>
+                Educational tasks designed for individuals with ASD,
+                providing a structured environment for learning and assessment.
+            </p>
+
+        </a>
+
+        <a href="./1/tasksolver.html" class="card">
+
+            <h2>Task Solver</h2>
+
+            <img src="./solver.png">
+
+            <p>
+                Vision-based analysis, task interpretation, planning,
+                and automatic generation of task-solving actions.
+            </p>
+
+        </a>
+
+        <a href="./1/roboticinterface.html" class="card">
+
+            <h2>Robotic Interface</h2>
+
+            <img src="./robot.png">
+
+            <p>
+                Communication between the solver and robotic platforms,
+                enabling autonomous task execution and demonstrations.
+            </p>
+
+        </a>
+
+    </div>
+
+    <div class="footer">
+        Last updated:
+        <script>
+            document.write(document.lastModified);
+        </script>
+    </div>
+
+</div>
+
+</body>
+
+</html>

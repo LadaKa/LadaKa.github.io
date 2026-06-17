@@ -1,0 +1,61 @@
+import ozobot
+import asyncio
+from _ozo import DeviceManager
+import math
+
+dm = DeviceManager()
+
+distance_x = None
+distance_y_red = None
+distance_y_blue = None
+distance_y_green = None
+forward_speed = None
+rotation_speed = None
+rotation_angle = None
+found_color_code = None
+
+async def move_to_target(distance_y):
+    if distance_y < 0:
+        rotation_angle = 90
+    elif distance_y > 0:
+        rotation_angle = -90
+    await dm.movement.arotate(rotation_angle * (math.pi / 180), rotation_speed * (math.pi / 180))
+    await dm.movement.amove((math.fabs(distance_y)) / 1000.0, 30 / 1000.0)
+    await dm.movement.arotate((-rotation_angle) * (math.pi / 180), rotation_speed * (math.pi / 180))
+    await dm.movement.amove(distance_x / 1000.0, 30 / 1000.0)
+
+async def main():
+    global distance_x,distance_y_red,distance_y_blue,distance_y_green,forward_speed,rotation_speed,rotation_angle
+    forward_speed = 30
+    rotation_speed = 45
+    rotation_angle = 0
+    found_color_code = False
+    # This values are generated as parameters for given task configuration:
+    distance_x = 500
+    distance_y_red = -200
+    distance_y_blue = 0
+    distance_y_green = 200
+    #
+
+    #TODO: add red or green flash to show correctness
+    while not found_color_code:
+        await dm.movement.amove(10 / 1000.0, 30 / 1000.0)
+
+        if await dm.color.is_red():
+            await move_to_target(distance_y_red)
+            found_color_code = True
+
+        elif await dm.color.is_blue():
+            await move_to_target(distance_y_blue)
+            found_color_code = True
+
+        elif await dm.color.is_green():
+            await move_to_target(distance_y_green)
+            found_color_code = True
+
+        
+
+
+
+
+asyncio.run(main())
