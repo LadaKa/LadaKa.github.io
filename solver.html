@@ -18,7 +18,9 @@
             display: flex;
         }
 
-        /* SIDEBAR */
+        /* =========================
+           SIDEBAR
+           ========================= */
         .sidebar {
             width: 12%;
             min-width: 160px;
@@ -45,30 +47,43 @@
             background-color: #a4acb0;
         }
 
-        /* CONTENT */
+        /* =========================
+           CONTENT
+           ========================= */
         .content {
             flex: 1;
         }
 
-        /* GRID */
+        /* =========================
+           GRIDS
+           ========================= */
         .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
             gap: 2%;
             padding: 3%;
         }
 
-        /* TOP */
-        .topSection {
+        /* TOP = 2 columns layout */
+        .topGrid {
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
             background: #f2f6f7;
         }
 
+        /* BOTTOM = 3 columns layout */
+        .bottomSection {
+            grid-template-columns: 1fr 1fr 1fr;
+            background: #c8d7de;
+        }
+
+        /* =========================
+           TOP SECTION
+           ========================= */
         .topText {
-            grid-column: 1 / 3;
+            padding-right: 10px;
         }
 
         .topImage {
-            grid-column: 3;
             background: white;
             border-radius: 10px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
@@ -77,19 +92,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            max-height: 320px;
         }
 
         .topImage img {
-            width: 90%;
-            max-height: 300px;
+            width: 100%;
+            max-width: 260px;
+            height: auto;
             object-fit: contain;
         }
 
-        /* BOTTOM CARDS */
-        .bottomSection {
-            background: #c8d7de;
-        }
-
+        /* =========================
+           CARDS
+           ========================= */
         .card {
             background: white;
             text-align: center;
@@ -99,6 +115,12 @@
             text-decoration: none;
             color: inherit;
             box-sizing: border-box;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            background-color: #a4acb0;
+            transform: translateY(-3px);
         }
 
         .card img {
@@ -110,17 +132,13 @@
             max-width: 100%;
         }
 
-        .card:hover {
-            background-color: #a4acb0;
-            transform: translateY(-3px);
-        }
-
         .card p {
             font-size: 14px;
-            min-height: auto;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+           ========================= */
         .footer {
             text-align: center;
             padding: 10px;
@@ -128,44 +146,8 @@
             color: #444;
         }
 
-        /* STEPPER */
-        .stepper {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 18px 3%;
-            background: #f2f6f7;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            text-decoration: none;
-            color: #333;
-            font-size: 1rem;
-            padding: 8px 12px;
-            border-radius: 20px;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .step:hover {
-            background: #eaf3f8;
-            transform: translateY(-2px);
-        }
-
-        .dot {
-            font-size: 1.2rem;
-            color: #888;
-        }
-
-        .step.active .dot {
-            color: #1f6feb;
-        }
-
         /* =========================
-           MOBILE FIX (IMPORTANT)
+           MOBILE FIX
            ========================= */
         @media (max-width: 768px) {
 
@@ -173,6 +155,7 @@
                 flex-direction: column;
             }
 
+            /* SIDEBAR → TOP NAV */
             .sidebar {
                 width: 100%;
                 flex-direction: row;
@@ -194,26 +177,25 @@
                 padding: 12px;
             }
 
-            /* FIX MAIN BUG: GRID */
-            .grid {
+            /* TOP becomes stacked */
+            .topGrid {
                 grid-template-columns: 1fr;
-                gap: 12px;
-                padding: 12px;
+                text-align: center;
             }
 
             .topText h1 {
                 font-size: 1.6rem !important;
-                text-align: center;
             }
 
             .topText p {
                 font-size: 1rem !important;
             }
 
-            .stepper {
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
+            /* BOTTOM cards become single column */
+            .bottomSection {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 12px;
             }
         }
     </style>
@@ -231,7 +213,7 @@
     <div class="content">
 
         <!-- TOP -->
-        <div class="topSection grid">
+        <div class="topSection grid topGrid">
 
             <div class="topText">
                 <h1 style="font-size:3vw; text-align:center;">
@@ -240,7 +222,7 @@
 
                 <p style="font-size:1.3vw;">
                     The Vision-Based Solver enables automatic analysis and execution
-                    of visually structured Shoebox Tasks.
+                    of visually structured Shoebox Tasks using computer vision and machine learning.
                 </p>
             </div>
 
@@ -256,13 +238,13 @@
             <a href="./1/shoeboxtask.html" class="card">
                 <h2>Shoebox Tasks</h2>
                 <img src="./task.png">
-                <p>Structured educational tasks for ASD learning.</p>
+                <p>Educational structured tasks for ASD learning.</p>
             </a>
 
             <a href="./1/tasksolver.html" class="card">
                 <h2>Task Solver</h2>
                 <img src="./solver.png">
-                <p>Vision-based task analysis and execution.</p>
+                <p>Vision-based analysis and task execution.</p>
             </a>
 
             <a href="./1/roboticinterface.html" class="card">
