@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Task Solver</title>
+    <title>Robot as a Teacher</title>
 
     <style>
         /* =========================
@@ -84,7 +84,11 @@
         .contentCard p {
             font-size: 1.1rem;
             line-height: 1.6;
+            max-width: 130ch;
+            margin-left: auto;
+            margin-right: auto;
         }
+
 
         .contentCard img {
             display: block;
@@ -102,32 +106,27 @@
         }
 
         /* =========================
-   NEXT BUTTON
+   BACK BUTTON
    ========================= */
 
-        .arrowNav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 25px;
-            padding: 0 20px;
+        .backNav {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .arrowLink {
+        .backLink {
+            display: inline-block;
             text-decoration: none;
-            font-size: 3rem;
+            font-size: 1.2rem;
             color: #333;
-            transition: 0.2s;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
         }
 
-        .arrowLink:hover {
-            color: #6d8c9a;
-            transform: scale(1.15);
-        }
-
-        .arrowDisabled {
-            font-size: 3rem;
-            color: #aaa;
+        .backLink:hover {
+            background: #a4acb0;
+            transform: translateX(-3px);
         }
 
         /* =========================
@@ -225,6 +224,29 @@
                 gap: 10px;
             }
         }
+
+
+
+        .imageRow {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+
+
+        .imageRow img {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            object-fit: contain;
+
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+            padding: 5px;
+        }
     </style>
 </head>
 
@@ -247,23 +269,35 @@
 
         <div class="contentCard">
 
-            <h1>Task Solver</h1>
+            <h1>Robot as a Teacher</h1>
 
             <p>
-                Shoebox Tasks are visually structured educational activities
-                designed for individuals with Autism Spectrum Disorder (ASD).
-                Their clear organization supports learning, communication,
-                and the development of cognitive skills.
+                We are developing a system that enables the robot to autonomously execute Shoebox-Tasks using
+                knowledge provided by a vision-based solver.
+
             </p>
 
             <p>
-                In this project, Shoebox Tasks serve as a testbed for autonomous
-                task solving. Their visual structure enables machine learning
-                methods to detect task components, interpret task goals,
-                and generate action sequences leading to successful task completion.
+                In the “Robot as a Teacher” use case, the student
+                solves the tasks while the robot supports them by demonstrating solutions or providing guidance
+                through speech, gestures, or visual cues. The level of assistance can be adapted to the individual
+                needs of each student, allowing more independent learners to work with minimal interruption,
+                while others receive more structured support.
+
             </p>
 
-            <img src="./shoeboxtask.jpg" alt="Shoebox Task">
+            <p>
+                The robot can also help maintain motivation during task solving and support social skill development
+                through
+                interaction, turn-taking, and collaborative problem solving. If a physical robot is not available,
+                the same approach can be used in a simulated or remote learning environment.
+
+            </p>
+
+            <div class="imageRow">
+
+                <img src="./trio.png" alt="Example 1">
+            </div>
 
             <div class="figureCaption">
                 Example of a visually structured Shoebox Task.
@@ -274,30 +308,19 @@
         <!-- NEXT PAGE -->
         <div class="arrowNav">
 
-            <a href="shoeboxtask.html" class="arrowLink">
-                ←
-            </a>
+            <span class="arrowDisabled">←</span>
 
-            <a href="roboticinterface.html" class="arrowLink">
+            <a href="tasksolver.html" class="arrowLink">
                 →
             </a>
 
         </div>
 
-        <!-- STEPPER -->
 
-        <div class="stepper">
+        <div class="backNav">
 
-            <a href="shoeboxtask.html" class="step">
-                ○ Shoebox Tasks
-            </a>
-
-            <a href="tasksolver.html" class="step active">
-                ● Task Solver
-            </a>
-
-            <a href="roboticinterface.html" class="step">
-                ○ Robotic Interface
+            <a href="../index.html" class="backLink">
+                ← Back
             </a>
 
         </div>
