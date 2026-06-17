@@ -162,6 +162,105 @@ body {
     color: #1f6feb;
 }
 
+@media (max-width: 768px) {
+
+    body {
+        flex-direction: column;
+    }
+
+    /* =========================
+       SIDEBAR → MOBILE NAV BAR
+       ========================= */
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 8px;
+        gap: 6px;
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .sidebar a {
+        flex: 1;
+        font-size: 13px;
+        padding: 8px 6px;
+        margin: 0;
+        border-radius: 6px;
+    }
+
+    /* =========================
+       MAIN CONTENT
+       ========================= */
+    .content {
+        padding: 12px;
+    }
+
+    .contentCard {
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .contentCard h1 {
+        font-size: 1.6rem;
+    }
+
+    .contentCard p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .contentCard img {
+        width: 100%;
+        margin: 18px auto;
+    }
+
+    .figureCaption {
+        font-size: 0.85rem;
+    }
+
+    /* =========================
+       NAV ARROWS (IMPORTANT FIX)
+       ========================= */
+    .arrowNav {
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .arrowLink {
+        font-size: 2.2rem;
+        padding: 10px 20px;
+    }
+
+    /* Make arrows easier to tap */
+    .arrowLink {
+        display: inline-block;
+    }
+
+    /* =========================
+       STEPPER (fix overflow + readability)
+       ========================= */
+    .stepper {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .step {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    .footer {
+        font-size: 0.85rem;
+    }
+}
+
 </style>
 
 </head>
