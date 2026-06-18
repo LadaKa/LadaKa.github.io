@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Robotic Interface</title>
+    <title>Robot as a Teacher</title>
 
     <style>
         /* =========================
@@ -84,7 +84,11 @@
         .contentCard p {
             font-size: 1.1rem;
             line-height: 1.6;
+            max-width: 130ch;
+            margin-left: auto;
+            margin-right: auto;
         }
+
 
         .contentCard img {
             display: block;
@@ -102,31 +106,27 @@
         }
 
         /* =========================
-   NEXT BUTTON
+   BACK BUTTON
    ========================= */
-        .arrowNav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 25px;
-            padding: 0 20px;
+
+        .backNav {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .arrowLink {
+        .backLink {
+            display: inline-block;
             text-decoration: none;
-            font-size: 3rem;
+            font-size: 1.2rem;
             color: #333;
-            transition: 0.2s;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
         }
 
-        .arrowLink:hover {
-            color: #6d8c9a;
-            transform: scale(1.15);
-        }
-
-        .arrowDisabled {
-            font-size: 3rem;
-            color: #aaa;
+        .backLink:hover {
+            background: #a4acb0;
+            transform: translateX(-3px);
         }
 
         /* =========================
@@ -224,6 +224,29 @@
                 gap: 10px;
             }
         }
+
+
+
+        .imageRow {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+
+
+        .imageRow img {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            object-fit: contain;
+
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+            padding: 5px;
+        }
     </style>
 </head>
 
@@ -246,23 +269,65 @@
 
         <div class="contentCard">
 
-            <h1>Robotic Interface</h1>
+            <h1>Visual Programming Interface</h1>
 
             <p>
-                Shoebox Tasks are visually structured educational activities
-                designed for individuals with Autism Spectrum Disorder (ASD).
-                Their clear organization supports learning, communication,
-                and the development of cognitive skills.
+
+                In structured educational approaches such as TEACCH, students with Autism Spectrum Disorder (ASD)
+                often use
+                <b>visual schedules</b> to organize activities and understand sequences of actions. These schedules provide
+                clear visual
+                guidance and help create a predictable learning environment.
+
+
+
+
             </p>
 
             <p>
-                In this project, Shoebox Tasks serve as a testbed for autonomous
-                task solving. Their visual structure enables machine learning
-                methods to detect task components, interpret task goals,
-                and generate action sequences leading to successful task completion.
+
+                From a robotics perspective, a visual schedule can also be viewed as a simple <b>algorithm</b> —a sequence
+                of steps
+                that describes how a task should be performed. This observation forms the basis of our visual
+                programming approach.
+
             </p>
 
-            <img src="./shoeboxtask.jpg" alt="Shoebox Task">
+            <p>
+
+                Instead of learning traditional programming languages, students create programs for a robot using
+                <b>visual programming interface</b>.
+                By arranging pictures, symbols, or action cards into a sequence, they teach the robot how to solve a
+                Shoebox Task.
+                In this way, programming becomes a natural extension of concepts already used in their educational
+                environment.
+
+
+            </p>
+            <p>
+
+                The complexity of the system can be adapted to the student's age, skills, and experience. A single
+                visual card may represent
+                a complete task, a robot action, or a lower-level operation, allowing gradual introduction of robotics
+                and computational
+                thinking concepts.
+
+
+            </p>
+            <p>
+
+                Our goal is to motivate students with ASD to engage with robotics through a structured and supportive
+                learning environment.
+                We hope to provide new opportunities for learning, problem solving, and creativity, while also opening
+                potential pathways
+                toward future interests, studies, and careers in technology and engineering.
+
+            </p>
+
+            <div class="imageRow">
+
+                <img src="./trio.png" alt="Example 1">
+            </div>
 
             <div class="figureCaption">
                 Example of a visually structured Shoebox Task.
@@ -273,28 +338,19 @@
         <!-- NEXT PAGE -->
         <div class="arrowNav">
 
+            <span class="arrowDisabled">←</span>
+
             <a href="tasksolver.html" class="arrowLink">
-                ←
+                →
             </a>
 
-            <span class="arrowDisabled">→</span>
-                
         </div>
 
-        <!-- STEPPER -->
 
-        <div class="stepper">
+        <div class="backNav">
 
-            <a href="shoeboxtask.html" class="step">
-                ○ Shoebox Tasks
-            </a>
-
-            <a href="tasksolver.html" class="step">
-                ○ Task Solver
-            </a>
-
-            <a href="roboticinterface.html" class="step active">
-                ● Robotic Interface
+            <a href="../index.html" class="backLink">
+                ← Back
             </a>
 
         </div>
