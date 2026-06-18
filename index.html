@@ -8,12 +8,8 @@
     <title>Robot-Assisted Shoebox-tasks</title>
 
     <style>
-        /* =========================
-   BASE
-   ========================= */
 
-        html,
-        body {
+        html, body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
@@ -21,8 +17,6 @@
         body {
             display: flex;
         }
-
-        /* SIDEBAR */
 
         .sidebar {
             width: 12%;
@@ -50,15 +44,10 @@
             background-color: #a4acb0;
         }
 
-        /* =========================
-   MAIN
-   ========================= */
-
         .content {
             flex: 1;
         }
 
-        /* SAME GRID FOR EVERYTHING */
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -66,20 +55,14 @@
             padding: 3%;
         }
 
-        /* =========================
-   TOP
-   ========================= */
-
         .topSection {
             background: #f7f9fa;
         }
 
-        /* text spans 2 columns */
         .topText {
             grid-column: 1 / 3;
         }
 
-        /* image = EXACTLY right column */
         .topImage {
             grid-column: 3;
             background: white;
@@ -103,48 +86,41 @@
 
         .topImage {
             position: relative;
-            /* needed for overlay positioning */
             overflow: hidden;
         }
 
-        /* hidden by default */
         .topCaption {
             position: absolute;
             left: 0;
             right: 0;
             bottom: 0;
-
             background: rgba(28, 27, 27, 0.681);
             color: rgba(247, 242, 242, 0.681);
             font-size: 0.9rem;
             padding: 10px;
-
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.25s ease;
         }
 
-        /* show on hover */
         .topImage:hover .topCaption {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* =========================
-   BOTTOM
-   ========================= */
-
         .bottomSection {
             background: #c8d7de;
         }
 
-        /* CARD */
         .card {
             background: white;
             text-align: center;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
             border-radius: 10px;
             padding: 10px;
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
 
         .card img {
@@ -155,10 +131,8 @@
             display: block;
         }
 
-
         .card:hover {
             background-color: #a4acb0;
-            /* dark blue tint */
             transform: translateY(-3px);
         }
 
@@ -167,22 +141,16 @@
             background-color: #eaf3f8;
         }
 
-        /* TEXT */
         .card p {
             font-size: 1vw;
             min-height: 8vh;
         }
 
-
-
-        /* BUTTON */
         .learnButton {
             width: 80%;
             font-size: 1.1vw;
             padding: 2%;
         }
-
-        /* FOOTER */
 
         .footer {
             text-align: center;
@@ -191,15 +159,12 @@
             color: #444;
         }
 
-        .card {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
+        /* =========================
+           MOBILE FIX (IMPORTANT PART)
+           ========================= */
 
         @media (max-width: 768px) {
 
-            /* stack sidebar on top or hide it (optional) */
             body {
                 flex-direction: column;
             }
@@ -212,14 +177,26 @@
                 max-width: unset;
             }
 
-            /* IMPORTANT: fix grid */
             .grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
                 padding: 15px;
             }
 
-            /* fix typography scaling issues */
+            /* ✅ THIS FIXES TOP LAYOUT ORDER */
+            .topSection.grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .topText {
+                order: 1;
+            }
+
+            .topImage {
+                order: 2;
+            }
+
             .card p {
                 font-size: 14px;
                 min-height: auto;
@@ -233,6 +210,7 @@
                 font-size: 24px !important;
             }
         }
+
     </style>
 </head>
 
@@ -246,35 +224,40 @@
 
     <div class="content">
 
-        <!-- TOP -->
         <div class="topSection grid">
-            <div
-                style="position:sticky; top:0; z-index:9999; background:#444; color:#fff; padding:10px; text-align:center; font-family:Arial, sans-serif;">
+
+            <div style="position:sticky; top:0; z-index:9999; background:#444; color:#fff; padding:10px; text-align:center;">
                 🚧 Under reconstruction — updates in progress
             </div>
-            <div class="topText">
+
+<div class="topText">
                 <h1 style="font-size:3vw; text-align:center;">
                     Robot-Assisted Shoebox-tasks
                 </h1>
 
-                <p >
-Shoebox-tasks are learning activities used in education for people with Autism Spectrum Disorder (ASD). 
-Their clear visual structure also makes them suitable for vision-based machine learning. <br>
+                <p>
+                    Shoebox-tasks are learning activities used in education for people with Autism Spectrum Disorder
+                    (ASD).
+                    Their clear visual structure also makes them suitable for vision-based machine learning. <br>
 
-Our research focuses on automatically analysing these tasks so a robot can solve them autonomously. 
-We convert camera input into symbolic task descriptions (PDDL), action plans, and robot actions.  <br>
+                    Our research focuses on automatically analysing these tasks so a robot can solve them autonomously.
+                    We convert camera data into symbolic task descriptions (PDDL), action plans, and robot actions.
+                    <br>
 
-There are two main use cases. First, the robot acts as a teacher and guides the student through the task. 
-Second, we develop a visual programming interface for robotics education. Similar to visual schedules used in
- approaches such as TEACCH®, we use visual task schedules to represent algorithms that guide a robot in solving tasks. <br>
+                    There are two main use cases. First, the robot acts as a teacher and guides the student through the
+                    task.
+                    Second, we develop a visual programming interface for robotics education. Similar to visual
+                    schedules used in
+                    approaches such as TEACCH®, we use visual task schedules to represent algorithms that guide a robot
+                    in solving tasks. <br>
 
-We aim to use familiar educational methods to support learning, increase interest in robotics, and make
- computational thinking more accessible for students with ASD.<br><br>
+                    We aim to use familiar educational methods to support learning, increase interest in robotics, and
+                    make
+                    computational thinking more accessible for students with ASD.<br><br>
                     <b>Lada Kudláčková</b><br>
                     Charles University, Faculty of Mathematics and Physics
                 </p>
             </div>
-
 
 
             <div class="topImage">
@@ -287,7 +270,6 @@ We aim to use familiar educational methods to support learning, increase interes
 
         </div>
 
-        <!-- BOTTOM -->
         <div class="bottomSection grid">
 
             <a href="solver.html" class="card">
@@ -299,8 +281,7 @@ We aim to use familiar educational methods to support learning, increase interes
             <a href="./2/teacher.html" class="card">
                 <h2>Robot as a Teacher</h2>
                 <img src="./1.png">
-                <p>Robots assisting students during Shoebox-tasks solving through guidance, monitoring and
-                    demonstrations.</p>
+                <p>Robots assisting students during Shoebox-tasks solving through guidance, monitoring and demonstrations.</p>
             </a>
 
             <a href="./3/prg.html" class="card">
@@ -321,5 +302,4 @@ We aim to use familiar educational methods to support learning, increase interes
     </div>
 
 </body>
-
 </html>
