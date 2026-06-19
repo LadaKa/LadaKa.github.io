@@ -5,13 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact</title>
+    <title>Collaborations</title>
 
     <style>
-        /* =========================
-   BASE
-   ========================= */
-
         html,
         body {
             margin: 0;
@@ -22,9 +18,7 @@
             display: flex;
         }
 
-        /* =========================
-   SIDEBAR
-   ========================= */
+        /* SIDEBAR */
 
         .sidebar {
             width: 12%;
@@ -52,9 +46,7 @@
             background-color: #a4acb0;
         }
 
-        /* =========================
-   MAIN AREA
-   ========================= */
+        /* MAIN */
 
         .content {
             flex: 1;
@@ -67,13 +59,11 @@
             justify-content: center;
         }
 
-        /* =========================
-   CONTACT BLOCK
-   ========================= */
+        /* CARD */
 
         .contactCard {
             background: white;
-            max-width: 800px;
+            max-width: 1200px;
             width: 100%;
             border-radius: 10px;
             padding: 40px;
@@ -93,9 +83,7 @@
             color: #333;
         }
 
-        /* =========================
-   LIST STYLE CONTACTS
-   ========================= */
+        /* LIST */
 
         .contactList {
             margin-top: 25px;
@@ -118,8 +106,27 @@
         }
 
         /* =========================
-   MOBILE
+   IMAGE FIX (IMPORTANT)
    ========================= */
+
+        .imageRow {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .imageRow img {
+            max-width: 100%;
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+            background: white;
+            padding: 5px;
+        }
+
+        /* MOBILE */
 
         @media (max-width: 768px) {
 
@@ -153,6 +160,7 @@
             .contactList li {
                 font-size: 1rem;
             }
+
         }
     </style>
 </head>
@@ -163,7 +171,7 @@
     <div class="sidebar">
         <a href="../index.html">Home</a>
         <a href="./papers.html">Papers</a>
-        <a href="./menu/collaborations.html">Collaborations</a>
+        <a href="./collaborations.html">Collaborations</a>
         <a href="./contacts.html">Contact</a>
     </div>
 
@@ -172,35 +180,18 @@
 
         <div class="contactCard">
 
-            <h1>Contact</h1>
+            <h1>Collaborations</h1>
 
-            <p>
-                I am a PhD student at the
-                Faculty of Mathematics and Physics,
-                Charles University, working in the Robotics Laboratory at the Troja campus in Prague.
-                <br>Please feel free to contact me regarding collaboration or any questions.
-            </p>
+            We are grateful for the support of <b>Linda and Ron Larsen</b>.<br>
+             Their insights and feedback are highly valuable and
+            help us ensure that our work remains aligned with the original principles and educational ideas behind
+            ShoeboxTasks©. We greatly appreciate their contribution to this project.<br>
 
-            <ul class="contactList">
+            We also thank the team at <a href="https://www.shoeboxtasks.com/">Centering on Children</a>, where the ShoeboxTasks© are produced.
 
-                <li>
-                    <b>Email:</b><br>
-                    kudlackova@ktiml.mff.cuni.cz
-                </li>
-
-
-
-
-                <li>
-                    <b>Department Web Page:</b><br> <a href="https://www.ktiml.mff.cuni.cz/"
-                        target="_blank">https://www.ktiml.mff.cuni.cz/</a>
-                </li>
-                <li>
-                    <b>Robotics Laboratory:</b><br>
-                    IMPAKT, MFF CUNI, V Holešovičkách 2, 180 00 Prague 8, Prague, Czech Republic</a>
-                </li>
-
-            </ul>
+            <div class="imageRow">
+                <img src="./robots.png">
+            </div>
 
         </div>
 
